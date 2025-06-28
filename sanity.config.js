@@ -5,7 +5,7 @@ import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'ETCF Event Manager',
+  title: 'ETCF Web Content Manager',
 
   projectId: 'xx91ckl7',
   dataset: 'production',
