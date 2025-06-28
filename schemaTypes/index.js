@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import eventCard from './eventCard';
+
+export const schemaTypes = [eventCard];
