@@ -1,3 +1,4 @@
+// remove Icons Build
 import { defineType, defineField } from 'sanity'
 
 export default defineType({
