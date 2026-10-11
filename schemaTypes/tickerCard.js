@@ -1,4 +1,3 @@
-// remove Icons Build
 import { defineType, defineField } from 'sanity'
 
 export default defineType({
@@ -47,6 +46,11 @@ export default defineType({
             name: 'end',
             title: 'Stop Showing',
             type: 'datetime',
+            validation: rule =>
+                rule.custom((value, context) => {
+                    if (!value || !context.document?.start) return true
+                    return value > context.document.start || 'Stop Showing must be after Start Showing.'
+                }),
         }),
     ],
     preview: {
