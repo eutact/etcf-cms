@@ -1,0 +1,238 @@
+{
+  "_id": "drafts.annual-calendar-2025-website-import",
+  "_type": "annualCalendar",
+  "year": 2025,
+  "title": "Our Year Together",
+  "description": "Journey through a year of faith, worship, fellowship and community with ETCF.",
+  "months": [
+    {
+      "_key": "month-01",
+      "_type": "annualMonth",
+      "month": 1,
+      "heading": "Pongal Celebration",
+      "events": [
+        {
+          "_key": "event-01-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Pongal Celebration",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-01-11",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-02",
+      "_type": "annualMonth",
+      "month": 2,
+      "heading": "Holy Family Devotion",
+      "events": [
+        {
+          "_key": "event-02-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Dedicated to Holy Family",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-02-08",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-03",
+      "_type": "annualMonth",
+      "month": 3,
+      "heading": "Retreat & Tamil Mass",
+      "events": [
+        {
+          "_key": "event-03-01",
+          "_type": "annualEvent",
+          "title": "ETCF Lenten Retreat & Tamil Mass",
+          "category": "Retreat",
+          "description": "Join us for a spiritual one-day retreat and celebrate Mass together!",
+          "date": "2025-03-29",
+          "time": "10:00 AM to 4:30 PM",
+          "venue": "Sacred Heart Catholic Church, 10821 96 St, Edmonton, AB T5H 2J8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-04",
+      "_type": "annualMonth",
+      "month": 4,
+      "heading": "Easter Celebration",
+      "events": [
+        {
+          "_key": "event-04-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Easter Celebration",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-04-26",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-05",
+      "_type": "annualMonth",
+      "month": 5,
+      "heading": "Blessed Virgin Mary",
+      "events": [
+        {
+          "_key": "event-05-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Dedicated to Blessed Virgin Mary",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-05-10",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "Sacred Heart Catholic Church, 10821 96 St, Edmonton, AB T5H 2J8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-06",
+      "_type": "annualMonth",
+      "month": 6,
+      "heading": "Sacred Heart Devotion",
+      "events": [
+        {
+          "_key": "event-06-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Dedicated to Sacred Heart of Jesus",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-06-14",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-07",
+      "_type": "annualMonth",
+      "month": 7,
+      "heading": "Jubilee Celebration",
+      "events": [
+        {
+          "_key": "event-07-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Fr. Susai Jubilee Celebration Mass",
+          "category": "Tamil Mass",
+          "description": "Join us to celebrate Mass together!",
+          "date": "2025-07-26",
+          "time": "5:30 PM (Rosary) & 6:00 PM (Mass)",
+          "venue": "Sacred Heart Church of the First Peoples, 10821 96 St, Edmonton, AB T5H 2J8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-08",
+      "_type": "annualMonth",
+      "month": 8,
+      "heading": "Madhu Madha & Family Picnic",
+      "events": [
+        {
+          "_key": "event-08-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Dedicated to Madhu Madha | Annual Family Picnic 2025 @ Lac St. Anne",
+          "category": "Tamil Mass + Gathering",
+          "description": "Join us to celebrate Mass together!",
+          "date": "2025-08-16",
+          "time": "10 AM",
+          "venue": "St. Anne Shrine (Lac Ste Anne Pilgrimage Grounds), Comp 33, Site 114, RR 1, Lac Ste. Anne, AB T0E 0A0",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-09",
+      "_type": "annualMonth",
+      "month": 9,
+      "heading": "Annai Velankanni Feast",
+      "events": [
+        {
+          "_key": "event-09-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Annai Velankanni Feast",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-09-13",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-10",
+      "_type": "annualMonth",
+      "month": 10,
+      "heading": "Holy Rosary",
+      "events": [
+        {
+          "_key": "event-10-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Dedicated to Holy Rosary",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-10-11",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-11",
+      "_type": "annualMonth",
+      "month": 11,
+      "heading": "All Saints & All Souls",
+      "events": [
+        {
+          "_key": "event-11-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - All saints & All souls Days",
+          "category": "Tamil Mass",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-11-01",
+          "time": "6:45 PM (Rosary) & 7:15 PM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_key": "month-12",
+      "_type": "annualMonth",
+      "month": 12,
+      "heading": "Christmas Celebration",
+      "events": [
+        {
+          "_key": "event-12-01",
+          "_type": "annualEvent",
+          "title": "Tamil Mass - Christmas Celebration",
+          "category": "Tamil Mass + Celebration",
+          "description": "Join us for an evening to celebrate Mass together!",
+          "date": "2025-12-27",
+          "time": "11:00 AM (Rosary) & 11:15 AM (Mass)",
+          "venue": "St. Theresa's Catholic Church, 7508 29 Ave NW, Edmonton, AB - T6K 3Y8.",
+          "active": true,
+          "note": "Followed by Luncheon and Christmas Culturals."
+        }
+      ]
+    }
+  ]
+}
