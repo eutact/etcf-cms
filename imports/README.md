@@ -27,8 +27,8 @@ npx sanity documents create imports/annual-calendar-2025.json --dataset producti
 ```
 
 After import, open **Our Year Together → Our Year Together — 2025** in Studio.
-Review the contents before publishing. Prepare a separate calendar with confirmed
-2026 dates if the current-year calendar is needed.
+Review the contents before publishing. For the current year, use the separate
+2026 draft described below.
 
 ## Import status
 
@@ -40,3 +40,24 @@ not publish content. No schema code was changed.
 The import file is retained in Git for review and repeatability. Pushing this
 repository does not import or publish Sanity documents; the draft was created
 separately through the authenticated CLI.
+
+## Current-year 2026 draft
+
+`annual-calendar-2026.json` contains the same 12 months and 12 events with the
+year changed to 2026, as requested. Month/day values, times, venues, month themes
+and event order are preserved. Embedded 2025 labels are updated to 2026. These
+month/day values fall on Sundays in 2026; the website calculates the actual
+weekday from each stored date. The published 2025 document is not overwritten.
+
+Draft ID: `drafts.annual-calendar-2026-website-import`. Review it in Studio before
+publishing. The frontend shows the full current-year history, including earlier
+months, once that year's calendar is published. No Git push is required for later
+content-only changes after the frontend update is deployed.
+
+```sh
+npx sanity documents create imports/annual-calendar-2026.json --dataset production --missing
+```
+
+The saved 2026 draft was read back from Sanity and compared field for field with
+`annual-calendar-2026.json`; all twelve month/day values, times and venues match.
+It has not been published. The 2025 published record is unchanged.

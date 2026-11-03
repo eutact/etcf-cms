@@ -18,12 +18,13 @@ export default defineType({
   name: 'annualCalendar',
   title: 'Our Year Together',
   type: 'document',
-  description: 'One calendar per year. Publish confirmed dates to display this calendar on the website.',
+  description: 'One calendar per year. The current Edmonton year shows its full January–December history, including past and upcoming events. Publish to update the website.',
   initialValue: () => ({
-    year: new Date().getFullYear(),
+    year: Number(new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Edmonton', year: 'numeric'}).format(new Date())),
     title: 'Our Year Together',
     description: 'Journey through a year of faith, worship, fellowship and community with ETCF.',
     months: monthNames.map((heading, index) => ({
+      _key: `month-${String(index + 1).padStart(2, '0')}`,
       _type: 'annualMonth',
       month: index + 1,
       heading,
@@ -35,7 +36,7 @@ export default defineType({
       name: 'year',
       title: 'Calendar Year',
       type: 'number',
-      description: 'The website shows the published calendar for the current year in Edmonton. Prepare future years in advance.',
+      description: 'Use the actual event year. The website shows the entire published calendar for the current year in Edmonton, including earlier months. Prepare future years separately.',
       validation: rule => rule.required().integer().min(2000).max(2100),
     }),
     defineField({
@@ -84,7 +85,7 @@ export default defineType({
             name: 'events',
             title: 'Events',
             type: 'array',
-            description: 'Add confirmed events and drag to set their display order. An empty month shows no listed events.',
+            description: 'Add confirmed events for this calendar year, including events that have already happened. Drag to set their order. An empty month shows no listed events.',
             validation: rule => rule.custom((events, context) => {
               const year = context.document?.year
               const month = context.parent?.month

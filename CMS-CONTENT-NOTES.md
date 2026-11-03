@@ -52,12 +52,15 @@ The `annualCalendar` schema adds **Our Year Together** to Sanity Studio. This is
 - The website keeps months in January-to-December order, with events in the editor's saved order.
 - Dates and weekdays come from each event's stored date, independently of the month heading or numeric header marker. The marker continues to identify the month.
 - Event counts include visible, valid events. A published empty month shows **0 listed events** and the empty state; it does not reuse the old static event.
-- If no calendar exists for the current year, or Sanity cannot be reached, the existing HTML schedule remains the fallback.
+- Earlier months and past events within the selected current year remain visible; this calendar is a full-year history, not an upcoming-only list.
+- If no published calendar exists for the current year, or Sanity cannot be reached, the website shows a current-year empty/unavailable state. It does not reuse dates from another year.
 - If multiple published calendars exist for a year, the most recently updated one is used.
 
 ### Existing schedule and release
 
-The static fallback still has the known date inconsistency: it labels old dates with the current year, for example **October 11, 2026 (Saturday)** even though that date is Sunday. No old dates have been automatically migrated or corrected. Enter only committee-confirmed dates into the new calendar.
+The previous hardcoded fallback was a 2025 schedule under an automatic current-year label. That fallback is removed in the frontend change so 2025 dates cannot appear as 2026 events. The published 2025 import remains a separate record. A separate 2026 draft now contains the same month/day values with the year changed to 2026, as requested. All twelve dates fall on Sundays in 2026; the frontend calculates those weekdays. Titles, times, venues and notes are retained, with embedded 2025 labels updated to 2026. Review the 2026 draft before publishing it.
+
+The public site redirects to `https://www.edmontontamilcatholics.ca`; that exact origin must be allowed in Sanity CORS with credentials disabled. The non-www origin alone is insufficient. The www origin has been added to the project settings.
 
 Deploy the updated Studio to expose the schema in the hosted CMS, and upload the updated website files to expose the integration on the public site. Starting the local Studio makes the editor available locally; it does not deploy either application or publish calendar content.
 
