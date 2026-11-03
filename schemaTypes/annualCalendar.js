@@ -18,7 +18,7 @@ export default defineType({
   name: 'annualCalendar',
   title: 'Our Year Together',
   type: 'document',
-  description: 'One calendar per year. The current Edmonton year shows its full January–December history, including past and upcoming events. Publish to update the website.',
+  description: 'One reusable calendar for every year. Keep the months and events here, prepare the next year as a draft, then review and publish.',
   initialValue: () => ({
     year: Number(new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Edmonton', year: 'numeric'}).format(new Date())),
     title: 'Our Year Together',
@@ -36,7 +36,8 @@ export default defineType({
       name: 'year',
       title: 'Calendar Year',
       type: 'number',
-      description: 'Use the actual event year. The website shows the entire published calendar for the current year in Edmonton, including earlier months. Prepare future years separately.',
+      readOnly: true,
+      description: 'Use “Prepare next year” in the document actions menu to change this year and carry over the event dates. Review the draft before publishing.',
       validation: rule => rule.required().integer().min(2000).max(2100),
     }),
     defineField({
@@ -182,6 +183,9 @@ export default defineType({
   orderings: [{title: 'Year, newest first', name: 'yearDesc', by: [{field: 'year', direction: 'desc'}]}],
   preview: {
     select: {title: 'title', year: 'year'},
-    prepare: ({title, year}) => ({title: `${title || 'Our Year Together'} — ${year || 'Year required'}`}),
+    prepare: ({title, year}) => ({
+      title: title || 'Our Year Together',
+      subtitle: year ? `Calendar year: ${year}` : 'Choose a calendar year',
+    }),
   },
 })

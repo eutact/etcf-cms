@@ -37,28 +37,33 @@ The `annualCalendar` schema adds **Our Year Together** to Sanity Studio. This is
 
 ### Editor workflow
 
-1. Open **Our Year Together** and create one calendar document for the year.
-2. Enter the calendar year, section heading, and optional description.
-3. New calendars start with twelve month entries and no events. Edit each month heading/theme as needed.
-4. Within a month, add events with their confirmed title, category, description, date, time, venue, and optional additional note.
-5. Drag events within a month to set their display order. Turn off **Show on Website** to hide an event without deleting it.
-6. Publish the calendar. Draft changes do not appear on the public website. Sanity's CDN may take a short time to reflect a publish.
+1. Open **Our Year Together** in the sidebar. It opens the same calendar directly every time.
+2. Edit the section heading, description, twelve months and their events. Drag events to set their order; turn off **Show on Website** to hide an event.
+3. Publish when ready. Draft changes stay private; the website reads only published content.
+4. To reuse the calendar for another year, open the document actions menu and choose **Prepare next year**. Confirm the target year and save the draft.
+5. Review the carried-over month/day values and their new weekdays, update event details, then publish when that year should replace the live calendar. Do not publish a future-year calendar early: the website displays only the current Edmonton year.
+
+The year field is read-only; **Prepare next year** updates it together with the event dates. The action preserves all twelve months, event order, descriptions, times and venues. It updates year references in titles/headings. Invalid dates, including February 29 in a non-leap year, are cleared for review and must be completed before publishing. It does not publish automatically.
+
+There is one reusable document (`annual-calendar`). Calendar creation, duplication and deletion actions are removed from the normal editor workflow. The previous 2025/2026 records remain in the dataset as backups, outside the sidebar workflow; do not create a new document each year.
 
 ### Validation and display
 
 - There must be exactly one entry for each of the twelve months.
-- Event title, date, time, and venue are required. The date must be real and belong to its month and calendar year.
-- The website selects the current year's published calendar using Edmonton's timezone. Prepare future-year calendars in advance; keep only one document per year.
-- The website keeps months in January-to-December order, with events in the editor's saved order.
-- Dates and weekdays come from each event's stored date, independently of the month heading or numeric header marker. The marker continues to identify the month.
-- Event counts include visible, valid events. A published empty month shows **0 listed events** and the empty state; it does not reuse the old static event.
-- Earlier months and past events within the selected current year remain visible; this calendar is a full-year history, not an upcoming-only list.
-- If no published calendar exists for the current year, or Sanity cannot be reached, the website shows a current-year empty/unavailable state. It does not reuse dates from another year.
-- If multiple published calendars exist for a year, the most recently updated one is used.
+- Event title, date, time and venue are required. Dates must be real and belong to their month and calendar year.
+- The website reads the published reusable calendar and displays it only when its year matches the current Edmonton year.
+- Months appear January to December; events retain the editor's saved order.
+- Weekdays come from stored event dates. Earlier months and past events remain visible for the whole current year.
+- A published empty month shows **0 listed events**; it does not reuse an old static event.
+- A missing, unreachable or different-year calendar shows an empty/unavailable state, never relabeled dates from another year.
 
-### Existing schedule and release
+### Migration and release
 
-The previous hardcoded fallback was a 2025 schedule under an automatic current-year label. That fallback is removed in the frontend change so 2025 dates cannot appear as 2026 events. The published 2025 import remains a separate record. A separate 2026 draft now contains the same month/day values with the year changed to 2026, as requested. All twelve dates fall on Sundays in 2026; the frontend calculates those weekdays. Titles, times, venues and notes are retained, with embedded 2025 labels updated to 2026. Review the 2026 draft before publishing it.
+The reusable 2026 draft was copied from the existing published 2026 calendar, preserving all twelve months and twelve events. The migration initially created `drafts.annual-calendar` without publishing. Following release approval on November 3, 2026, that reviewed draft was published as `annual-calendar` and read back field for field. The previous 2025 and 2026 records were not modified or deleted.
+
+Deploy the Studio and frontend updates together. The frontend prefers the published reusable document. Its legacy fallback remains available for installations that have not yet completed the migration. Pushing Git code does not publish Sanity documents.
+
+The imported 2026 schedule retains the original month/day values as requested; those twelve dates fall on Sundays in 2026. Maintainers should confirm future-year dates rather than assuming the same weekdays recur.
 
 The public site redirects to `https://www.edmontontamilcatholics.ca`; that exact origin must be allowed in Sanity CORS with credentials disabled. The non-www origin alone is insufficient. The www origin has been added to the project settings.
 

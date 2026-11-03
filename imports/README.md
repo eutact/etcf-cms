@@ -1,63 +1,46 @@
-# Existing website calendar import
+# Calendar imports and reusable editor
 
-`annual-calendar-2025.json` contains one **draft** calendar: 12 month entries and
-12 events extracted from the website's `AnnualCalendar.jsx` schedule. Event titles,
-month themes, descriptions, dates, times, venues and the December note are retained.
+## Current workflow: one reusable calendar
 
-The source is a 2025 schedule. Its August title explicitly says 2025, and every
-month/day matches Saturday in 2025. The frontend's automatic year label does not
-make those dates a confirmed 2026 schedule. No dates were advanced to 2026.
+**Our Year Together** opens the fixed document `annual-calendar` directly. Edit
+and publish that document. Each year, use **Prepare next year** in its actions
+menu, review the carried-over dates and weekdays, and publish when ready. Do not
+create a separate calendar document for each year.
 
-Target: project `xx91ckl7`, dataset `production`, document
-`drafts.annual-calendar-2025-website-import`. The draft prefix prevents this import
-from publishing the calendar or changing the live website. No schema changes are
-required. The website currently displays only the published calendar for the
-current Edmonton year; this historical draft does not replace that calendar.
+`annual-calendar-singleton.json` is the prepared **2026 draft**, copied from the
+published 2026 calendar with all twelve months and twelve events preserved. Its
+ID is `drafts.annual-calendar`. It has been created and read back successfully;
+on November 3, 2026, the reviewed draft was published as `annual-calendar` after release approval and verified field for field. The old 2025/2026 records remain untouched as backups.
 
-From `etcf-cms/`, sign in if necessary:
+For a repeatable migration in the existing project, sign in and run from
+`etcf-cms/`:
 
 ```sh
 npx sanity login
+npx sanity exec scripts/prepare-calendar-singleton.cjs --with-user-token
 ```
 
-Create the reviewed draft without overwriting an existing document:
+The script copies the current Edmonton year's existing calendar only if the
+reusable calendar has no draft or published document. Existing reusable content
+is preserved. It never publishes or deletes records. Review the resulting draft
+in Studio before publishing. Pushing this repository does not import or publish
+Sanity documents.
 
-```sh
-npx sanity documents create imports/annual-calendar-2025.json --dataset production --missing
-```
+The frontend prefers the published reusable document. Until its first publish,
+it falls back to the existing published current-year record. It never displays
+a calendar from another year as the current year.
 
-After import, open **Our Year Together → Our Year Together — 2025** in Studio.
-Review the contents before publishing. For the current year, use the separate
-2026 draft described below.
+## Retained original imports
 
-## Import status
+`annual-calendar-2025.json` contains the original website schedule: twelve month
+entries and twelve events, with descriptions, dates, times, venues and notes.
+The source dates were Saturdays in 2025.
 
-Imported successfully as `drafts.annual-calendar-2025-website-import`. The remote
-document was read back and compared with this file: all 12 months, all 12 events
-and every imported field match. The calendar remains a draft; this operation did
-not publish content. No schema code was changed.
+`annual-calendar-2026.json` retains the same month/day values with the year changed
+to 2026, as requested. Embedded year labels were updated; times, venues, themes
+and event order were preserved. These dates fall on Sundays in 2026. Both source
+records are now published in the dataset; the checked-in files retain their
+original draft IDs for reference and recovery.
 
-The import file is retained in Git for review and repeatability. Pushing this
-repository does not import or publish Sanity documents; the draft was created
-separately through the authenticated CLI.
-
-## Current-year 2026 draft
-
-`annual-calendar-2026.json` contains the same 12 months and 12 events with the
-year changed to 2026, as requested. Month/day values, times, venues, month themes
-and event order are preserved. Embedded 2025 labels are updated to 2026. These
-month/day values fall on Sundays in 2026; the website calculates the actual
-weekday from each stored date. The published 2025 document is not overwritten.
-
-Draft ID: `drafts.annual-calendar-2026-website-import`. Review it in Studio before
-publishing. The frontend shows the full current-year history, including earlier
-months, once that year's calendar is published. No Git push is required for later
-content-only changes after the frontend update is deployed.
-
-```sh
-npx sanity documents create imports/annual-calendar-2026.json --dataset production --missing
-```
-
-The saved 2026 draft was read back from Sanity and compared field for field with
-`annual-calendar-2026.json`; all twelve month/day values, times and venues match.
-It has not been published. The 2025 published record is unchanged.
+These files are retained for traceability, not for annual document creation.
+Project: `xx91ckl7`; dataset: `production`.
